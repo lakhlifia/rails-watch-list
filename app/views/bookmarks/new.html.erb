@@ -1,0 +1,5 @@
+<h1>New Bookmark</h1>
+
+<%= render 'form', bookmark: @bookmark, list: @list %>
+
+<%= link_to 'Back', new_list_bookmark_path(list_id: @list.id), class: 'btn btn-secondary' %>
