@@ -1,0 +1,10 @@
+.list-photo {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; // Ajoutez d'autres styles si nécessaire
+
+  img {
+    max-width: 100%; // Assurez-vous que l'image reste dans les limites du conteneur
+    max-height: 100%;
+  }
+}

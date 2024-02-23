@@ -78,3 +78,4 @@ gem 'rails-controller-testing', group: [ :test ]
 
 #env gem
 gem "dotenv-rails"
+gem "cloudinary"

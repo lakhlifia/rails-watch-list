@@ -1,4 +1,10 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'cine.jpg' %>);">
+  <div class="container">
+    <h1>UGC</h1>
 
+  </div>
+</div>
+<%# raise %>
 <h1>All Lists</h1>
 
 <table>
@@ -22,3 +28,26 @@
 </table>
 
 <%= link_to 'New List', new_list_path, class: 'btn btn-success' %>
+
+<style>
+  .banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+</style>
