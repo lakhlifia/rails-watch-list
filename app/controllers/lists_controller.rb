@@ -1,33 +1,41 @@
 class ListsController < ApplicationController
-   # Action to show all lists
+  before_action :set_list, only: [:show, :destroy]
 
-   def index
+  def index
     @lists = List.all
   end
 
-
-  # Action to show the details of a specific list
   def show
-    @list = List.find(params[:id])
+    @bookmark = Bookmark.new
+    @review = Review.new(list: @list)
   end
-   # Action to render the form for creating a new list
-   def new
+
+  def new
     @list = List.new
   end
-  # Action to handle the creation of a new list
+
   def create
     @list = List.new(list_params)
     if @list.save
-      redirect_to  list_path(@list), notice: 'List was successfully created.'
+      redirect_to list_path(@list)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
+  def destroy
+    @list.destroy
+    redirect_to lists_path, status: :see_other
+  end
+
   private
 
-  # Strong parameters for creating a new list
+  def set_list
+    @list = List.find(params[:id])
+  end
+
   def list_params
     params.require(:list).permit(:name, :photo)
   end
 end
+
